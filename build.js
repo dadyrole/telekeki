@@ -4,7 +4,7 @@ const path = require('path');
 const SRC = path.join(__dirname, 'ТКС_Ответы_на_зачёт.md');
 const OUT = path.join(__dirname, 'index.html');
 
-const raw = fs.readFileSync(SRC, 'utf-8');
+const raw = fs.readFileSync(SRC, 'utf-8').replace(/\r\n/g, '\n');
 
 function escapeHtml(s) {
   return s
